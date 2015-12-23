@@ -1,0 +1,18 @@
+jira-app:
+#  image: cptactionhank/atlassian-jira:6.4
+  build: jira-app 
+  hostname: jira-app
+  ports:
+    - 8080:8080
+  links:
+    - "jira-db"
+
+jira-db:
+  image: mysql:5.7.10
+  hostname: jira-db
+#  command: tail -f /dev/null
+  environment:
+    MYSQL_DATABASE: jiradb
+    MYSQL_USER: jira
+    MYSQL_ROOT_PASSWORD: admin
+
