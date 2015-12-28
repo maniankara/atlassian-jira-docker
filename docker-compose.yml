@@ -4,13 +4,14 @@ jira-app:
   hostname: jira-app
   ports:
     - 8080:8080
+  volumes:
+    - /var/tmp/jira:/var/opt/jira
   links:
     - "jira-db"
 
 jira-db:
   image: mysql:5.7.10
   hostname: jira-db
-#  command: tail -f /dev/null
   environment:
     MYSQL_DATABASE: jiradb
     MYSQL_USER: jira
