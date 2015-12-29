@@ -5,7 +5,7 @@ This composes atlassian-jira 7.0 with mysql 5.7.10 database docker containers
 2. cd atlassian-jira-docker
 3. docker-compose up
 
-You are ready to start configuring JIRA at https://localhost:8080
+You are ready to start configuring JIRA at http://localhost:8080
 
 Configuring:
 1. Define your company name
@@ -17,5 +17,11 @@ Configuring:
 7. Skip first project creation 
 8. All set !!
 
+You are ready to use JIRA at http://localhost:8080
+
+Restoring JIRA:
+  If you have a possiblity to get a JIRA backup from a http url with wget, 
+just add that url to jira.env file and the restoration happens on the next docker-compose up
+
 Supported versions:
-docker-compose: 1.5 and above
+docker-compose: 1.5 and above 

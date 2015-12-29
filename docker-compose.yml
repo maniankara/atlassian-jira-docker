@@ -6,6 +6,8 @@ jira-app:
     - 8080:8080
   volumes:
     - /var/tmp/jira:/var/opt/jira
+  env_file:
+    - ./jira.env
   links:
     - "jira-db"
 
